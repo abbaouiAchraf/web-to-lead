@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Checkout example · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="checkout.css" rel="stylesheet">
+  </head>
+  <body class="bg-body-tertiary">
+    
+
+  
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>Be Client</h2>
+     </div>
+
+    <div class="row g-5">
+      <div class="">
+        <h4 class="mb-3">Client Form</h4>
+        <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+          <div class="popup" *ngIf="isModalOpen">
+            <div class="popup-content">
+              <form class="mt-3" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQy000000uAQA" method="POST">
+                <input type=hidden name="oid" value="00DQy000000uAQA">
+                <input type=hidden name="retURL" value="http://">
+                <div class="row mt-3 ms-2">
+                  <div class="col-md-6 form-group">
+                    <label for="first_name" class="label-input">First Name*</label>
+                    <input type="text" id="first_name" name="first_name" class="custom-input form-control"
+                           placeholder="Enter first name"  formControlName="first_name">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="last_name" class="label-input">Last Name*</label>
+                    <input type="text" id="last_name" name="last_name" class="custom-input form-control"
+                           placeholder="Enter last name"  formControlName="last_name">
+                  </div>
+                </div>
+          
+                <div class="row mt-3 ms-2">
+                  <div class="col-md-6 form-group">
+                    <label for="email" class="label-input">Email*</label>
+                    <input type="text" id="email" name="email" class="custom-input form-control"
+                           placeholder="Enter email"  formControlName="email">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="company" class="label-input">Company*</label>
+                    <input type="text" id="company" name="company" class="custom-input form-control"
+                           placeholder="Enter company"  formControlName="company">
+                  </div>
+                </div>
+          
+                <div class="row mt-3 ms-2">
+                  <div class="col-md-6 form-group">
+                    <label for="city" class="label-input">City*</label>
+                    <input type="text" id="city" name="city" class="custom-input form-control"
+                           placeholder="Enter city"  formControlName="city">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="state" class="label-input">State*</label>
+                    <input type="text" id="state" name="state" class="custom-input form-control"
+                           placeholder="Enter state"  formControlName="state">
+                  </div>
+                </div>
+          
+                <div class="row mt-3 ms-2">
+                  <div class="col-md-6 form-group">
+                    <label for="street" class="label-input">Street*</label>
+                    <input type="text" id="street" name="street" class="custom-input form-control"
+                           placeholder="Enter street"  formControlName="street">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="zip" class="label-input">Zip*</label>
+                    <input type="text" id="zip" name="zip" class="custom-input form-control"
+                           placeholder="Enter zip"  formControlName="zip">
+                  </div>
+                </div>
+          
+                <div class="row mt-3 ms-2">
+                  <div class="col-md-6 form-group">
+                    <label for="mobile" class="label-input">Mobile*</label>
+                    <input type="text" id="mobile" name="mobile" class="custom-input form-control"
+                           placeholder="Enter mobile"  formControlName="mobile">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="country" class="label-input">Country*</label>
+                    <input type="text" id="country" name="country" class="custom-input form-control"
+                           placeholder="Enter country"  formControlName="country">
+                  </div>
+                </div>
+          
+                <div class="row ms-3" style="margin-top: 40px;">
+                  <div class="col-md-6 form-group">
+                    <input type="submit" class="btn btn-confirm btn-bd-primary" name="submit">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+      </div>
+    </div>
+  </main>
+
+</div>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="checkout.js"></script></body>
+</html>
